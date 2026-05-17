@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1. Favicon (Tab Logo) -->
+    <link rel="icon" type="image/x-icon" href="https://img.magnific.com/free-vector/colorful-musical-festival-with-music-notes-design_1017-26878.jpg?semt=ais_hybrid&w=740&q=80">
+    
+    <!-- 2. Adsterra/Monetag JS Tag (Added Exactly where required) -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="238533" async data-cfasync="false"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartik Music | Search & Download Free Songs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #121212; color: white; }
+        
+        /* Navbar */
+        nav { background: #1f1f1f; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #800000; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: #ffcc00; font-size: 24px; font-weight: bold; text-transform: uppercase; }
+
+        /* Search Section */
+        .search-container { padding: 60px 10%; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; }
+        .search-container h1 { margin-bottom: 20px; font-size: clamp(24px, 5vw, 40px); color: #fff; }
+        .search-box { display: flex; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .search-box input { flex: 1; padding: 18px; border: none; border-radius: 5px 0 0 5px; outline: none; font-size: 16px; color: #333; }
+        .search-box button { padding: 15px 30px; border: none; background: #800000; color: white; cursor: pointer; border-radius: 0 5px 5px 0; transition: 0.3s; font-size: 18px; }
+        .search-box button:hover { background: #ffcc00; color: #000; }
+
+        /* Converter Box */
+        .converter-box { background: #1f1f1f; padding: 30px; text-align: center; border-radius: 15px; margin: -30px 10% 20px 10%; border: 1px solid #800000; position: relative; z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .converter-box h3 { color: #ffcc00; margin-bottom: 10px; }
+        .converter-box p { font-size: 14px; color: #bbb; margin-bottom: 15px; }
+
+        /* Ad Slots */
+        .ad-slot { width: 100%; text-align: center; margin: 20px 0; padding: 10px; background: #1a1a1a; border: 1px dashed #333; min-height: 90px; }
+
+        /* Song List */
+        .song-section { padding: 40px 10%; }
+        .song-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .song-card { background: #1f1f1f; padding: 20px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #333; transition: 0.3s; }
+        .song-card:hover { transform: translateY(-5px); border-color: #800000; }
+        
+        .download-btn { background: #800000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+        .download-btn:hover { background: #28a745; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 40px; background: #000; color: #555; border-top: 2px solid #1f1f1f; }
+
+        @media (max-width: 600px) {
+            .converter-box { margin: -20px 5% 20px 5%; }
+            .song-card { flex-direction: column; text-align: center; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Kartik Music</div>
+        <div class="menu"><i class="fas fa-bars" style="color: #ffcc00; font-size: 20px;"></i></div>
+    </nav>
+
+    <div class="search-container">
+        <h1>What do you want to hear?</h1>
+        <form action="https://www.youtube.com/results" method="get" target="_blank" class="search-box">
+            <input type="text" name="search_query" placeholder="Search song, artist or album..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+    <!-- YouTube to MP3 Converter Box -->
+    <div class="converter-box">
+        <h3><i class="fab fa-youtube" style="color: #ff0000;"></i> YouTube to MP3 Helper</h3>
+        <p>YouTube se link copy karein aur niche click karke download karein.</p>
+        <a href="https://ytmp3.nu/" target="_blank" class="download-btn" style="background: #28a745;">
+            <i class="fas fa-bolt"></i> Open MP3 Converter
+        </a>
+    </div>
+
+    <div class="ad-slot">
+        <!-- Banner Ads Yahan Dikhenge -->
+        <p style="font-size: 10px; color: #444;">ADVERTISEMENT</p>
+    </div>
+
+    <section class="song-section">
+        <div class="song-list">
+            <div class="song-card">
+                <div style="display: flex; align-items: center;">
+                    <i class="fas fa-play-circle" style="font-size: 30px; color: #ffcc00; margin-right: 15px;"></i>
+                    <div>
+                        <h3>Kesariya - Brahmastra</h3>
+                        <p style="font-size: 12px; color: #888;">Arijit Singh</p>
+                    </div>
+                </div>
+                <a href="https://www.google.com/search?q=kesariya+mp3+download" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Get Song
+                </a>
+            </div>
+            <!-- Aur gaane yahan add kar sakte ho -->
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Kartik Music</strong> &copy; 2026 | Safe & Free</p>
+    </footer>
+
+</body>
+</html>

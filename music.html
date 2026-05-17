@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moni Music | Search & Download</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #121212; color: white; }
+        
+        nav { background: #1f1f1f; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #800000; }
+        .logo { color: #ffcc00; font-size: 24px; font-weight: bold; }
+
+        .search-container { padding: 50px 10%; text-align: center; background: #1a1a1a; }
+        .search-box { display: flex; max-width: 600px; margin: 20px auto; }
+        .search-box input { flex: 1; padding: 15px; border: none; border-radius: 5px 0 0 5px; outline: none; }
+        .search-box button { padding: 15px 25px; border: none; background: #800000; color: white; cursor: pointer; border-radius: 0 5px 5px 0; }
+
+        .song-section { padding: 40px 10%; }
+        .song-list { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        
+        .song-card { background: #1f1f1f; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; }
+        .song-details h3 { font-size: 16px; }
+        .song-details p { font-size: 13px; color: #aaa; }
+        
+        /* Download Button Styling */
+        .download-btn { background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .download-btn:hover { background: #218838; transform: translateY(-2px); }
+        
+        .no-result { text-align: center; color: #666; display: none; }
+    </style>
+</head>
+<body>
+
+    <nav><div class="logo">Moni Music</div></nav>
+
+    <div class="search-container">
+        <h1>Search & Download Music</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Type song name..." onkeyup="filterSongs()">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <section class="song-section">
+        <div class="song-list" id="songList">
+            <!-- Song 1 -->
+            <div class="song-card">
+                <div class="song-details">
+                    <h3>Kesariya - Brahmastra</h3>
+                    <p>Arijit Singh | MP3</p>
+                </div>
+                <!-- Yahan 'download' attribute zaruri hai -->
+                <a href="songs/kesariya.mp3" download class="download-btn"><i class="fas fa-download"></i> Download</a>
+            </div>
+
+            <!-- Song 2 -->
+            <div class="song-card">
+                <div class="song-details">
+                    <h3>Raataan Lambiyan</h3>
+                    <p>Jubin Nautiyal | MP3</p>
+                </div>
+                <a href="songs/raataan.mp3" download class="download-btn"><i class="fas fa-download"></i> Download</a>
+            </div>
+        </div>
+        <div id="noResult" class="no-result">No songs found...</div>
+    </section>
+
+    <script>
+        // Search Feature ka logic
+        function filterSongs() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('song-card');
+            let list = document.getElementById('songList');
+            let noResult = document.getElementById('noResult');
+            let found = false;
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                    found = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+            noResult.style.display = found ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
